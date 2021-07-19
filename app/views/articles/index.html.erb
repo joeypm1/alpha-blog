@@ -1,28 +1,27 @@
-<div id="page-content">
-  <h1 class="text-center mt-4">articles listing page</h1>
-  <%= button_to 'Create new article', new_article_path, method: :get, id: 'yo' %>
-  <div class="container">
-  <% @articles.each do |article| %>
-    <div class="row justify-content-md-center">
-      <div class="col-10 mt-2">
-        <div class="card w-100 shadow p-3 bg-white rounded" style="width: 18rem;">
-          <div class="card-body pb-0">
-            <h5 class="card-title"><%= link_to article.title, article_path(article), class: "text-success" %></h5>
-            <h6 class="card-subtitle mb-2 text-muted font-italic">by Joey</h6>
-            <p class="card-text"><%= truncate(article.description, length: 100) %></p>
-            <%= link_to 'View', article_path(article), class: "btn btn-outline-success btn-sm" %>
-            <%= link_to 'Edit', edit_article_path(article), class: "btn btn-outline-info btn-sm" %>
-            <%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: "Are you sure???" }, class: "btn btn-outline-danger btn-sm" %>
-            <br><br>
-            <p><span class="smaller ">created <%= time_ago_in_words(article.created_at) %> ago, edit: <%= time_ago_in_words(article.updated_at) %> ago</span></p>
-          </div>
+<h1 class="text-center mt-4">articles listing page</h1>
+<%= button_to 'Create new article', new_article_path, method: :get, id: 'yo' %>
+<div class="container">
+<% @articles.each do |article| %>
+  <div class="row justify-content-md-center">
+    <div class="col-10 mt-2">
+      <div class="card w-100 shadow p-3 bg-white rounded" style="width: 18rem;">
+        <div class="card-body pb-0">
+          <h5 class="card-title"><%= link_to article.title, article_path(article), class: "text-success" %></h5>
+          <h6 class="card-subtitle mb-2 text-muted font-italic">by Joey</h6>
+          <p class="card-text"><%= truncate(article.description, length: 100) %></p>
+          <%= link_to 'View', article_path(article), class: "btn btn-outline-success btn-sm" %>
+          <%= link_to 'Edit', edit_article_path(article), class: "btn btn-outline-info btn-sm" %>
+          <%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: "Are you sure???" }, class: "btn btn-outline-danger btn-sm" %>
+          <br><br>
+          <p><span class="smaller ">created <%= time_ago_in_words(article.created_at) %> ago, edit: <%= time_ago_in_words(article.updated_at) %> ago</span></p>
         </div>
       </div>
     </div>
-  <% end %>
   </div>
-  <br><br><br>
+<% end %>
 </div>
+<br><br><br>
+
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <h1 class="text-center mt-4">old article listing</h1>
