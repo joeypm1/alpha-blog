@@ -1,6 +1,6 @@
 <div id="page-content">
   <h1 class="text-center mt-4">articles listing page</h1>
-
+  <%= button_to 'Create new article', new_article_path, method: :get, id: 'yo' %>
   <div class="container">
   <% @articles.each do |article| %>
     <div class="row justify-content-md-center">
